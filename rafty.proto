@@ -1,0 +1,18 @@
+syntax = "proto2";
+package rafty;
+option optimize_for = LITE_RUNTIME;
+
+message Value {
+  required uint64 index = 1;
+  required uint64 term = 2;
+  required bytes value = 3;
+};
+
+message Config {
+  repeated string peers = 1;
+  required uint64 heartbeat_ms = 2;
+  required uint64 timeout_ms = 3;
+  required string client_stream = 4;
+  required string publisher_stream = 5;
+  required string listen = 6;
+}
